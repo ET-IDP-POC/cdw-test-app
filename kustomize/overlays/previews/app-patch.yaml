@@ -1,0 +1,13 @@
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: AppClaim
+metadata:
+  name: cdw-test-app
+spec:
+  id: cdw-test-app
+  parameters:
+    namespace: production
+    image: docker.io/vfarcic/cdw-test-app:0.0.0
+    host: acme.com
+  compositionSelector:
+    matchLabels:
+      type: backend-db-local
