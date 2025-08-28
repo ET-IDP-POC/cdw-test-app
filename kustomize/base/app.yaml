@@ -1,0 +1,22 @@
+---
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: AppClaim
+metadata:
+  annotations:
+    gitHubOrg: ET-IDP-POC
+    gitHubRepo: cdw-test-app
+  name: cdw-test-app
+spec:
+  id: cdw-test-app
+  compositionSelector:
+    matchLabels:
+      type: backend-db-aws
+      location: local
+  parameters:
+    namespace: development
+    image: docker.io/jwhinn/cdw-test-app:latest
+    port: 8080
+    host: acme.com
+    db:
+      version: "13"
+      size: medium
